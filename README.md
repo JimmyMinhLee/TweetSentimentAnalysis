@@ -3,6 +3,14 @@ Inspired by the COVID-19 epidemic, I decided I wanted to know more about the sen
 response and any news around #AnimalCrossing. So, I built this application based off of a coding challenge that I had done a few months
 back.
 
+## Example Images 
+These are some images after implementing plotting and averaging of the scores. I weighted negative scores .3 times higher than positive ones because it seemed like positive scores dominated the negative ones from before; which makes sense - people probably don't want to be on social media ripping into certain things besides a vocal minority, in which they really rip into something. 
+
+![Application run on CoronaVirus](https://github.com/JimmyMinhLee/TweetSentimentAnalysis/blob/master/Screen%20Shot%202020-04-04%20at%2012.15.07%20PM.png)
+![Application run on DonaldTrump](https://github.com/JimmyMinhLee/TweetSentimentAnalysis/blob/master/Screen%20Shot%202020-04-04%20at%2012.11.15%20PM.png)
+![Application run on AnimalCrossing](https://github.com/JimmyMinhLee/TweetSentimentAnalysis/blob/master/Screen%20Shot%202020-04-04%20at%2012.12.09%20PM.png)
+
+
 ## How does it work?
 I used the tweepy and vaderSentimentAnalysis libraries to handle all of the work. I had to make a custom Listener class and implement a
 custom way to process the data, but a lot of the heavy lifting is handled by those libraries - which may be why the results are a little poor
