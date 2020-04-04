@@ -25,13 +25,15 @@ class TextProcessor():
 
     def process(self, raw_data, average_step):
         text = self.get_text(raw_data)
-        response = self.analyzer.polarity_scores(text)['compound']
+        response = self.analyzer.polarity_scores(text)['compound'] * 10
 
         # Instantiate plot
         plt.ion()
         plt.ylabel('Average sentiment per 10 tweets')
         plt.xlabel('Tweet count processed')
-        plt.plot(self.x_data, self.trend_y_data)
+        plt.title("{} composite sentiment based on tweets".format(self.name))
+        plt.plot(self.x_data, self.trend_y_data, label = "Total score of tweets processed")
+        plt.plot(self.x_data, self.average_y_data, label = "Individual average of tweets per 10")
         plt.draw()
 
         # Perform averaging and plot
@@ -64,9 +66,13 @@ class TextProcessor():
 
     def plot(self):
         # Update plot
-        plt.plot(self.x_data, self.trend_y_data)
-        plt.draw()
+        plt.clf()
+        plt.title("{} composite sentiment based on tweets".format(self.name))
+        plt.plot(self.x_data, self.trend_y_data, label = "Total score of tweets processed")
+        plt.plot(self.x_data, self.average_y_data, label = "Individual average of tweets per 10")
+        plt.legend(loc=2)
         plt.pause(0.1)
+
 
     def normalize(self, response, average_step):
         if self.average_count != average_step:
