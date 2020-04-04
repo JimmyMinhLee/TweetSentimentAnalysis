@@ -12,3 +12,5 @@ as of right now. Running the app.py file will livestream the tweets and give you
 I list out some methods with to-do bodies that I plan on implementing in the future. The goal is to connect this Python application to a working front
 end so that anyone who's interested in public perception of a specific topic can use it to see the data in real time. It might also be
 in my best interest to log these results in some database somewhere, but I think I'll do that when I learn more about databases!
+
+EDIT (April 4th, 2020): Implemented a basic averaging setup - I just average every ten tweets that I process; and also used pyplot to plot the overall score and the individual scores being processed. Next, I want to figure out how to plot an average line and figure out some way to better clean the data, because as of right now, all tweets seem to be getting happier and happier about CoronaVirus. I'm thinking about maybe weighting negative scores more, but we'll have to see.
