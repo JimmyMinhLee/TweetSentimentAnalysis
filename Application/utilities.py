@@ -26,9 +26,11 @@ class TextProcessor():
 
     def process(self, raw_data, average_step):
         text = self.get_text(raw_data)
+        # if "RT" in text: return
         response = self.analyzer.polarity_scores(text)['compound']
+        print(text)
 
-        if response < 0: response = response * 1.3
+        # if response < 0: response = response * 1.3
 
         # Instantiate plot
         plt.ion()

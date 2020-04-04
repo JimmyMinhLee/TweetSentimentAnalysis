@@ -2,10 +2,14 @@ from application import *
 from apikeys import *
 import tweepy
 
-interested_keyword = "#CoronaVirus"
+corona = "CoronaVirus"
+animal = "Animal Crossing"
+donald = "Donald Trump"
 
-# Average for every 10 tweets processed
-average_time_step = 10
+interested_keyword = corona
+
+# However many tweets processed before plot/average
+average_time_step = 1
 listener = Listener(interested_keyword, average_time_step)
 
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
@@ -19,5 +23,3 @@ def stream_multiple(interested_keywords):
 
 if __name__=='__main__':
     stream.start_stream()
-    if sys.response() == "Stop":
-        print("Stop")

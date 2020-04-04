@@ -7,7 +7,7 @@ class Streamer():
         self.stream = tweepy.Stream(auth=auth, listener=listener)
 
     def start_stream(self):
-        self.stream.filter(track=self.hashtag)
+        self.stream.filter(track=[self.hashtag])
 
 class Listener(tweepy.StreamListener):
     def __init__(self, hashtag, average_time_step):
