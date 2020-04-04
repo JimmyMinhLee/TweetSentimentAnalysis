@@ -1,5 +1,6 @@
 import json, sys
 from os import system
+import numpy as np
 # from textblob import TextBlob
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import matplotlib.pyplot as plt
@@ -25,7 +26,9 @@ class TextProcessor():
 
     def process(self, raw_data, average_step):
         text = self.get_text(raw_data)
-        response = self.analyzer.polarity_scores(text)['compound'] * 10
+        response = self.analyzer.polarity_scores(text)['compound']
+
+        if response < 0: response = response * 1.3
 
         # Instantiate plot
         plt.ion()
