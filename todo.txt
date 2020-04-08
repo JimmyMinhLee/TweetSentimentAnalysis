@@ -1,0 +1,7 @@
+1. Store incoming data into a csv file
+2. Load csv file into database
+3. Using Python's built in to insert data into the csv
+
+4. Use pgadmin to look at the data, make queries.
+
+5. Use Python to open() the csv file and manually edit some information 
